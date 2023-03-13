@@ -25,8 +25,7 @@ function App() {
   }, [userName]);
 
   return (
-    <div className='container-fluid'>
-      <div className={'App' + (darkMode ? ' dark-mode' : 'light-mode')}>
+      <div className={'App container-fluid' + (darkMode ? ' dark-mode' : ' light-mode')}>
         <button
           className="but"
           onClick={() => {
@@ -48,7 +47,6 @@ function App() {
           <></>
         )}
       </div>
-    </div>
   );
 }
 

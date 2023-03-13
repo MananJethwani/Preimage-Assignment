@@ -24,33 +24,39 @@ const Profile = ({ user, octokit, isLoading, setIsLoading }) => {
       });
   }, [user]);
   return (
-    <div>
+    <>
       {isLoading ? (
-        <h1>Loading...</h1>
+        <div className='row'>
+          <h1>Loading...</h1>
+        </div>
       ) : isValidUser ? (
         <>
-          <div class="row offset-2 m-4">
-            <img id="avtar" className="col-4 col-lg-3"  src={profileData.avatar_url}></img>
-            <div class="col-6 center align-middle">
-              <h1>{profileData.login}</h1>
-              <h1>{profileData.name}</h1>
-              <h1>{profileData.bio}</h1>
-              <h1>{profileData.location}</h1>
-              <h1>followers: {profileData.followers}</h1>
-              <h1>following: {profileData.following}</h1>
-              <h1>public repos: {profileData.public_repos}</h1>
+          <div class="row pt-5 pb-5 profile-content">
+            <div className='offset-2 col-3 col-lg-3 profile-column-content'>
+              <img id="avtar"  src={profileData.avatar_url}></img>
+            </div>
+            <div class="ml-4 col-5 profile-column-content">
+              <h3>{profileData.login}</h3>
+              <h3>{profileData.name}</h3>
+              <h3>{profileData.bio}</h3>
+              <h3>{profileData.location}</h3>
+              <h3>followers: {profileData.followers}</h3>
+              <h3>following: {profileData.following}</h3>
+              <h3>public repos: {profileData.public_repos}</h3>
             </div>
           </div>
-          <Repositories
-            userName={user}
-            octokit={octokit}
-            totalRepos={profileData.public_repos}
-          />
+          <div className='row'>
+            <Repositories
+              userName={user}
+              octokit={octokit}
+              totalRepos={profileData.public_repos}
+            />
+          </div>
         </>
       ) : (
         <h1>Invalid User</h1>
       )}
-    </div>
+    </>
   );
 };
 

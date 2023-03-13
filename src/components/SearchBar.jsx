@@ -5,31 +5,28 @@ const SearchBar = ({ setUserName, setIsLoading }) => {
 
   return (
     <>
-      <div className="input-group">
+    <div className='row pt-4'>
+      <div className='col-5 offset-3'>
         <input
-          type="text"
-          name="query"
-          className="form-control"
-          class="col-5 offset-2 mt-4"
-          placeholder="Search Username"
-          value={query}
-          onChange={(e) => setQuery(e.currentTarget.value)}
-          aria-describedby="basic-addon2"
-        />
-        <div class="input-group-append">
-          <button
-            className="btn btn-primary btn-block"
-            class="col-2"
+            type="text"
+            name="query"
+            className="form-control"
+            placeholder="Search Username"
+            value={query}
+            onChange={(e) => setQuery(e.currentTarget.value)}
+            aria-describedby="basic-addon2"
+          />
+      </div>
+      <div className='col-1'>
+      <button
+            className="btn btn-primary"
             type="button"
             onClick={() => {
               setUserName(query);
               setIsLoading(true);
-            }}
-          >
-            Search
-          </button>
-        </div>
+            }}>search</button>
       </div>
+    </div>
     </>
   );
 };

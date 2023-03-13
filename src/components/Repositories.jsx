@@ -33,26 +33,34 @@ const Repositories = ({ userName, octokit, totalRepos }) => {
           {repoList.map((repo) => {
             console.log(repo);
             return (
-              <div key={repo.id} class="card offset-4 col-5 mb-4">
-                <div class="card-header">{repo.name}</div>
+              <div key={repo.id} class="card offset-2 col-8 mb-4">
+                <div class="card-header">
+                  <h1>{repo.name}</h1>
+                </div>
                 <div class="card-body">
-                  <h5 class="card-title">{repo.description}</h5>
-                  <h2 class="card-title"><span>Language: </span> {repo.language}</h2>
-                  <h2 class="card-title"><span>Forks:</span> {repo.forks_count}</h2>
-                  <h2 class="card-title"><span>Watchers: </span> {repo.watchers_count}</h2>
+                  <p class="card-title">{repo.description}</p>
+                  <p class="card-title"><span>Language: </span> {repo.language}</p>
+                  <p class="card-title"><span>Forks:</span> {repo.forks_count}</p>
+                  <p class="card-title"><span>Watchers: </span> {repo.watchers_count}</p>
                 </div>
               </div>
             );
           })}
-          <button disabled={page == 1} onClick={() => setPage(page - 1)}>
-            Previous
-          </button>
-          <button
-            disabled={totalRepos / 10 + (totalRepos % 10 != 0) <= page}
-            onClick={() => setPage(page + 1)}
-          >
-            Next
-          </button>
+          <div className='row pb-5'>
+            <div className='offset-5 col-1'>
+              <button className='btn btn-primary' disabled={page == 1} onClick={() => setPage(page - 1)}>
+              Previous
+            </button>
+            </div>
+            <div className='col-1'>
+            <button className='btn btn-primary'
+              disabled={parseInt(totalRepos / 10) + (totalRepos % 10 != 0) <= page}
+              onClick={() => setPage(page + 1)}
+            >
+              Next
+            </button>
+            </div>
+          </div>
         </>
       )}
     </>

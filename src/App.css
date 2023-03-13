@@ -2,10 +2,19 @@
   text-align: center;
 }
 
+.input-group {
+  width: 100%;
+}
+
 html,
 body {
   height: 100%;
   width: 100%;
+}
+
+.App {
+  min-height: 100%;
+  height: auto;
 }
 
 #root {
@@ -31,14 +40,31 @@ body {
   height: 100%;
 }
 
-.dark-mode button {
+.dark-mode {
+  min-height: 100%;
+  height: auto;
+}
+
+.dark-mode .card {
+  color: #282c34;
+}
+
+.dark-mode .but {
   background-color: #282c34;
   color: white;
 }
 
+.profile-content, profile-column-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 #avtar {
-  border-radius: 10px;
+  border-radius: 20px;
+  width: 70%;
   float: left;
+  position: relative;
 }
 
 .but {
