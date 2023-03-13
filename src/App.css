@@ -1,0 +1,53 @@
+.App {
+  text-align: center;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+#root {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background-color: white;
+  color: black;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.5rem;
+  margin: 0;
+  min-height: 100%;
+}
+
+.dark-mode {
+  background-color: #282c34;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.5rem;
+  margin: 0;
+  height: 100%;
+}
+
+.dark-mode button {
+  background-color: #282c34;
+  color: white;
+}
+
+#avtar {
+  border-radius: 10px;
+  float: left;
+}
+
+.but {
+  position: fixed;
+  right: 5vw;
+  bottom: 5vh;
+  z-index: 100;
+  border-radius: 5px;
+  background-color: white;
+  font-size: 1.5rem;
+  font-family: 'Roboto', sans-serif;
+}
